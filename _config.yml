@@ -1,7 +1,4 @@
 title: Meu backlog de jogos
-exclude:
-  - _db
-  - .gitignore
 plugins:
   - jekyll_sqlite
 sqlite:
