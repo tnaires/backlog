@@ -1,6 +1,8 @@
 title: Meu backlog de jogos
 plugins:
   - jekyll_sqlite
+whitelist:
+  - jekyll_sqlite
 sqlite:
   - data: jogos
     file: db/backlog.db
