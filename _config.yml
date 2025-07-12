@@ -3,5 +3,5 @@ plugins:
   - jekyll_sqlite
 sqlite:
   - data: jogos
-    file: &db "_db/backlog.db"
+    file: _db/backlog.db
     query: select j.nome, p.plataforma, g.genero, j.jogando from jogo j inner join plataforma p on p.id = j.id_plataforma inner join genero g on g.id = j.id_genero order by p.plataforma, j.nome
