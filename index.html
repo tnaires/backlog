@@ -1,0 +1,62 @@
+---
+layout: default
+---
+<table id="backlog" class="display compact">
+  <thead>
+    <th>Jogo</th>
+    <th>Plataforma</th>
+    <th>Genero</th>
+    <th>Jogando</th>
+  </thead>
+  <tbody>
+    {% for jogo in site.data.jogos %}
+      <tr>
+        <td>{{ jogo.nome }}</td>
+        <td>{{ jogo.plataforma }}</td>
+        <td>{{ jogo.genero }}</td>
+        <td>{{ jogo.jogando }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <th></th>
+    <th>Plataforma</th>
+    <th>Genero</th>
+    <th></th>
+  </tfoot>
+</table>
+<script>
+  new DataTable('#backlog', {
+    language: {
+      url: 'https://cdn.datatables.net/plug-ins/2.3.2/i18n/pt-BR.json',
+    },
+    initComplete: function () {
+        this.api()
+            .columns([1, 2])
+            .every(function () {
+                let column = this;
+ 
+                // Create select element
+                let select = document.createElement('select');
+                select.add(new Option(''));
+                column.footer().replaceChildren(select);
+ 
+                // Apply listener for user change in value
+                select.addEventListener('change', function () {
+                    column
+                        .search(select.value, {exact: true})
+                        .draw();
+                });
+ 
+                // Add list of options
+                column
+                    .data()
+                    .unique()
+                    .sort()
+                    .each(function (d, j) {
+                        select.add(new Option(d));
+                    });
+            });
+    },
+  });
+</script>
