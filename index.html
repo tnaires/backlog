@@ -1,6 +1,12 @@
 ---
 layout: default
 ---
+<div>
+  <span>Plataforma</span>
+  <span id="filtro1"></span>
+  <span>Gênero</span>
+  <span id="filtro2"></span>
+</div>
 <table id="backlog" class="display compact">
   <thead>
     <th>Jogo</th>
@@ -18,15 +24,17 @@ layout: default
       </tr>
     {% endfor %}
   </tbody>
-  <tfoot>
-    <th></th>
-    <th>Plataforma</th>
-    <th>Genero</th>
-    <th></th>
-  </tfoot>
 </table>
 <script>
   new DataTable('#backlog', {
+    paging: false,
+    layout: {
+        topStart: 'search',
+        topEnd: 'pageLength',
+        bottomStart: 'info',
+        bottomEnd: 'paging'
+    },
+    order: [[1, 'asc'], [0, 'asc']],
     language: {
       url: 'https://cdn.datatables.net/plug-ins/2.3.2/i18n/pt-BR.json',
     },
@@ -39,7 +47,7 @@ layout: default
                 // Create select element
                 let select = document.createElement('select');
                 select.add(new Option(''));
-                column.footer().replaceChildren(select);
+                $("#filtro" + column.index()).append(select);
  
                 // Apply listener for user change in value
                 select.addEventListener('change', function () {

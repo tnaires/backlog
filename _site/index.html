@@ -10,7 +10,13 @@
   <body>
     <h1>Meu backlog de jogos</h1>
     <section>
-      <table id="backlog" class="display compact">
+      <div>
+  <span>Plataforma</span>
+  <span id="filtro1"></span>
+  <span>Gênero</span>
+  <span id="filtro2"></span>
+</div>
+<table id="backlog" class="display compact">
   <thead>
     <th>Jogo</th>
     <th>Plataforma</th>
@@ -18,27 +24,6 @@
     <th>Jogando</th>
   </thead>
   <tbody>
-    
-      <tr>
-        <td>Soul Sacrifice Delta</td>
-        <td>PS Vita</td>
-        <td>RPG</td>
-        <td>true</td>
-      </tr>
-    
-      <tr>
-        <td>Diablo 3</td>
-        <td>PS3</td>
-        <td>RPG</td>
-        <td>true</td>
-      </tr>
-    
-      <tr>
-        <td>Ni No Kuni</td>
-        <td>PS3</td>
-        <td>RPG</td>
-        <td>true</td>
-      </tr>
     
       <tr>
         <td>Hot Wheels Unleashed 2</td>
@@ -54,16 +39,39 @@
         <td>true</td>
       </tr>
     
+      <tr>
+        <td>Ni No Kuni</td>
+        <td>PS3</td>
+        <td>RPG</td>
+        <td>true</td>
+      </tr>
+    
+      <tr>
+        <td>Diablo 3</td>
+        <td>PS3</td>
+        <td>RPG</td>
+        <td>true</td>
+      </tr>
+    
+      <tr>
+        <td>Soul Sacrifice Delta</td>
+        <td>PS Vita</td>
+        <td>RPG</td>
+        <td>true</td>
+      </tr>
+    
   </tbody>
-  <tfoot>
-    <th></th>
-    <th>Plataforma</th>
-    <th>Genero</th>
-    <th></th>
-  </tfoot>
 </table>
 <script>
   new DataTable('#backlog', {
+    paging: false,
+    layout: {
+        topStart: 'search',
+        topEnd: 'pageLength',
+        bottomStart: 'info',
+        bottomEnd: 'paging'
+    },
+    order: [[1, 'asc'], [0, 'asc']],
     language: {
       url: 'https://cdn.datatables.net/plug-ins/2.3.2/i18n/pt-BR.json',
     },
@@ -76,7 +84,7 @@
                 // Create select element
                 let select = document.createElement('select');
                 select.add(new Option(''));
-                column.footer().replaceChildren(select);
+                $("#filtro" + column.index()).append(select);
  
                 // Apply listener for user change in value
                 select.addEventListener('change', function () {
