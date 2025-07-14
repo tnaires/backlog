@@ -1,21 +1,3 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <link href="/assets/css/datatables.min.css" rel="stylesheet">
-    <script src="/assets/js/jquery-3.7.1.min.js"></script>
-    <script src="/assets/js/datatables.min.js"></script>
-    <title>Meu backlog de jogos</title>
-  </head>
-  <body>
-    <header>
-      <h1>Meu backlog de jogos</h1>
-    </header>
-    <section>
-      <nav>
-  A jogar | Jogando | Platinados | Lista de desejos
-</nav>
-
 <section>
   <span>Plataforma</span>
   <span id="filtro1"></span>
@@ -30,42 +12,14 @@
     <th>Jogando</th>
   </thead>
   <tbody>
-    
+    {% for jogo in include.jogos %}
       <tr>
-        <td>Hot Wheels Unleashed 2</td>
-        <td>PS4</td>
-        <td>Corrida</td>
-        <td>1</td>
+        <td>{{ jogo.nome }}</td>
+        <td>{{ jogo.plataforma }}</td>
+        <td>{{ jogo.genero }}</td>
+        <td>{{ jogo.jogando }}</td>
       </tr>
-    
-      <tr>
-        <td>Street Fighter 6</td>
-        <td>PS4</td>
-        <td>Luta</td>
-        <td>1</td>
-      </tr>
-    
-      <tr>
-        <td>Ni No Kuni</td>
-        <td>PS3</td>
-        <td>RPG</td>
-        <td>1</td>
-      </tr>
-    
-      <tr>
-        <td>Diablo 3</td>
-        <td>PS3</td>
-        <td>RPG</td>
-        <td>1</td>
-      </tr>
-    
-      <tr>
-        <td>Soul Sacrifice Delta</td>
-        <td>PS Vita</td>
-        <td>RPG</td>
-        <td>1</td>
-      </tr>
-    
+    {% endfor %}
   </tbody>
 </table>
 <script>
@@ -86,19 +40,19 @@
             .columns([1, 2])
             .every(function () {
                 let column = this;
- 
+
                 // Create select element
                 let select = document.createElement('select');
                 select.add(new Option(''));
                 $("#filtro" + column.index()).append(select);
- 
+
                 // Apply listener for user change in value
                 select.addEventListener('change', function () {
                     column
                         .search(select.value, {exact: true})
                         .draw();
                 });
- 
+
                 // Add list of options
                 column
                     .data()
@@ -111,8 +65,3 @@
     },
   });
 </script>
-
-
-    </section>
-  </body>
-</html>
