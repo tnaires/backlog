@@ -2,4 +2,34 @@
 layout: default
 ---
 {% include menu.html %}
-{% include table.html jogos=site.data.platinados %}
+<h2>Platinados</h2>
+{% include filtro.html %}
+<table id="backlog" class="display compact">
+  <thead>
+    <th>Jogo</th>
+    <th>Plataforma</th>
+    <th>Genero</th>
+    <th>Data zerado</th>
+    <th>Tem platina</th>
+    <th>Data platina</th>
+    <th>Tem DLC</th>
+    <th>Já fiz 100%</th>
+    <th>Data 100%</th>
+  </thead>
+  <tbody>
+    {% for jogo in site.data.platinados %}
+      <tr>
+        <td>{{ jogo.nome }}</td>
+        <td>{{ jogo.plataforma }}</td>
+        <td>{{ jogo.genero }}</td>
+        <td>{{ jogo.data_zerado }}</td>
+        <td>{{ jogo.tem_trofeu_platina }}</td>
+        <td>{{ jogo.data_platina }}</td>
+        <td>{{ jogo.tem_dlc }}</td>
+        <td>{{ jogo.ja_fiz_cem_por_cento }}</td>
+        <td>{{ jogo.data_cem_por_cento }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% include data_table.html %}

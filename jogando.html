@@ -2,4 +2,36 @@
 layout: default
 ---
 {% include menu.html %}
-{% include table.html jogos=site.data.jogando %}
+<h2>Jogando</h2>
+{% include filtro.html %}
+<table id="backlog" class="display compact">
+  <thead>
+    <th>Jogo</th>
+    <th>Plataforma</th>
+    <th>Genero</th>
+    <th>Tem troféus online</th>
+    <th>Servidores desligados</th>
+    <th>Já zerei</th>
+    <th>Data zerado</th>
+    <th>Já peguei os troféus online</th>
+    <th>Tem platina</th>
+    <th>Tem DLC</th>
+  </thead>
+  <tbody>
+    {% for jogo in site.data.jogando %}
+      <tr>
+        <td>{{ jogo.nome }}</td>
+        <td>{{ jogo.plataforma }}</td>
+        <td>{{ jogo.genero }}</td>
+        <td>{{ jogo.tem_trofeus_online }}</td>
+        <td>{{ jogo.servidores_desligados }}</td>
+        <td>{{ jogo.ja_zerei }}</td>
+        <td>{{ jogo.data_zerado }}</td>
+        <td>{{ jogo.ja_peguei_trofeus_online }}</td>
+        <td>{{ jogo.tem_trofeu_platina }}</td>
+        <td>{{ jogo.tem_dlc }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% include data_table.html %}
