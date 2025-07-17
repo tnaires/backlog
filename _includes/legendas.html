@@ -2,10 +2,12 @@
     <thead>
         Legendas de cores
     </thead>
-    {% if include.online %}
+    {% if include.online_ja_peguei %}
         <tr class="verde">
             <td>Jogos com troféus online que já peguei</td>
         </tr>
+    {% endif %}
+    {% if include.online %}
         <tr class="amarelo">
             <td>Jogos com troféus online que não peguei ainda, mas os servidores ainda tão ligados</td>
         </tr>
