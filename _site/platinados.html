@@ -2,6 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
+    <link href="/assets/css/main.css" rel="stylesheet">
     <link href="/assets/css/datatables.min.css" rel="stylesheet">
     <script src="/assets/js/jquery-3.7.1.min.js"></script>
     <script src="/assets/js/datatables.min.js"></script>
@@ -20,6 +21,23 @@
 </nav>
 
 <h2>Platinados</h2>
+<table>
+    <thead>
+        Legendas de cores
+    </thead>
+    
+    
+    <tr class="rosa">
+        <td>Jogos que fiz 100% sem platina</td>
+    </tr>
+    <tr class="roxo">
+        <td>Jogos platinados</td>
+    </tr>
+    <tr class="verde-claro">
+        <td>Jogos platinados e com todos os troféus de DLC</td>
+    </tr>
+    
+</table>
 <section>
   <span>Plataforma</span>
   <span id="filtro1"></span>
@@ -32,36 +50,82 @@
     <th>Plataforma</th>
     <th>Genero</th>
     <th>Data zerado</th>
-    <th>Tem platina</th>
     <th>Data platina</th>
-    <th>Tem DLC</th>
-    <th>Já fiz 100%</th>
     <th>Data 100%</th>
   </thead>
   <tbody>
     
-      <tr>
+      <tr
+        
+          
+            class = "roxo"
+          
+        
+        >
         <td>Ender Magnolia</td>
         <td>PS4</td>
         <td>Metroidvania</td>
         <td>07/04/2025</td>
-        <td>1</td>
         <td>08/04/2025</td>
-        <td>0</td>
-        <td>1</td>
         <td>08/04/2025</td>
       </tr>
     
-      <tr>
+      <tr
+        
+          
+            class = "roxo"
+          
+        
+        >
         <td>Doki Doki Literature Club Plus</td>
         <td>PS4</td>
         <td>Horror</td>
         <td>23/10/2024</td>
-        <td>1</td>
         <td>11/11/2024</td>
-        <td>0</td>
-        <td>1</td>
         <td>11/11/2024</td>
+      </tr>
+    
+      <tr
+        
+          
+            class = "verde-claro"
+          
+        
+        >
+        <td>Watch Dogs</td>
+        <td>PS3</td>
+        <td>Ação</td>
+        <td>02/07/2016</td>
+        <td>23/08/2016</td>
+        <td>31/08/2016</td>
+      </tr>
+    
+      <tr
+        
+          class = "roxo"
+        
+        >
+        <td>Rocket League</td>
+        <td>PS4</td>
+        <td>Esporte</td>
+        <td>05/05/2017</td>
+        <td>26/07/2017</td>
+        <td></td>
+      </tr>
+    
+      <tr
+        
+          
+            class = "rosa"
+          
+        
+        >
+        <td>Soma</td>
+        <td>PS4</td>
+        <td>Horror</td>
+        <td>01/10/2020</td>
+        <td></td>
+        <td>01/10/2020</td>
       </tr>
     
   </tbody>

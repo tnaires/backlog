@@ -3,33 +3,50 @@ layout: default
 ---
 {% include menu.html %}
 <h2>Jogando</h2>
+{% include legendas.html online = true completos = true %}
 {% include filtro.html %}
 <table id="backlog" class="display compact">
   <thead>
     <th>Jogo</th>
     <th>Plataforma</th>
     <th>Genero</th>
-    <th>Tem troféus online</th>
-    <th>Servidores desligados</th>
     <th>Já zerei</th>
     <th>Data zerado</th>
-    <th>Já peguei os troféus online</th>
-    <th>Tem platina</th>
+    <th>Data platina</th>
     <th>Tem DLC</th>
+    <th>Data 100%</th>
   </thead>
   <tbody>
     {% for jogo in site.data.jogando %}
-      <tr>
+      <tr
+        {% if jogo.ja_fiz_cem_por_cento == 1 %}
+          {% if jogo.tem_dlc == 1 %}
+            class = "verde-claro"
+          {% elsif jogo.tem_platina == 1 %}
+            class = "roxo"
+          {% else %}
+            class = "rosa"
+          {% endif %}
+        {% elsif jogo.ja_platinei == 1 %}
+          class = "roxo"
+        {% elsif jogo.tem_trofeus_online == 1 %}
+          {% if jogo.ja_peguei_trofeus_online == 1 %}
+            class = "verde"
+          {% elsif jogo.servidores_desligados == 1 %}
+            class = "vermelho"
+          {% else %}
+            class = "amarelo"
+          {% endif %}
+        {% endif %}
+        >
         <td>{{ jogo.nome }}</td>
         <td>{{ jogo.plataforma }}</td>
         <td>{{ jogo.genero }}</td>
-        <td>{{ jogo.tem_trofeus_online }}</td>
-        <td>{{ jogo.servidores_desligados }}</td>
         <td>{{ jogo.ja_zerei }}</td>
         <td>{{ jogo.data_zerado }}</td>
-        <td>{{ jogo.ja_peguei_trofeus_online }}</td>
-        <td>{{ jogo.tem_trofeu_platina }}</td>
+        <td>{{ jogo.data_platina }}</td>
         <td>{{ jogo.tem_dlc }}</td>
+        <td>{{ jogo.data_cem_por_cento }}</td>
       </tr>
     {% endfor %}
   </tbody>

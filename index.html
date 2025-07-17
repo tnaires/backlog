@@ -3,6 +3,7 @@ layout: default
 ---
 {% include menu.html %}
 <h2>A jogar</h2>
+{% include legendas.html online = true completos = false %}
 {% include filtro.html %}
 <table id="backlog" class="display compact">
   <thead>
@@ -11,21 +12,25 @@ layout: default
     <th>Genero</th>
     <th>Data de lançamento</th>
     <th>Já tenho</th>
-    <th>Tem troféus online</th>
-    <th>Servidores desligados</th>
     <th>Tem platina</th>
     <th>Tem DLC</th>
   </thead>
   <tbody>
     {% for jogo in site.data.a_jogar %}
-      <tr>
+      <tr
+        {% if jogo.tem_trofeus_online == 1 %}
+          {% if jogo.servidores_desligados == 1 %}
+            class = "vermelho"
+          {% else %}
+            class = "amarelo"  
+          {% endif %}
+        {% endif %}
+        >
         <td>{{ jogo.nome }}</td>
         <td>{{ jogo.plataforma }}</td>
         <td>{{ jogo.genero }}</td>
         <td>{{ jogo.data_lancamento }}</td>
         <td>{{ jogo.ja_tenho }}</td>
-        <td>{{ jogo.tem_trofeus_online }}</td>
-        <td>{{ jogo.servidores_desligados }}</td>
         <td>{{ jogo.tem_trofeu_platina }}</td>
         <td>{{ jogo.tem_dlc }}</td>
       </tr>

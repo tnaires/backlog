@@ -2,6 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
+    <link href="/assets/css/main.css" rel="stylesheet">
     <link href="/assets/css/datatables.min.css" rel="stylesheet">
     <script src="/assets/js/jquery-3.7.1.min.js"></script>
     <script src="/assets/js/datatables.min.js"></script>
@@ -20,6 +21,23 @@
 </nav>
 
 <h2>A jogar</h2>
+<table>
+    <thead>
+        Legendas de cores
+    </thead>
+    
+        <tr class="verde">
+            <td>Jogos com troféus online que já peguei</td>
+        </tr>
+        <tr class="amarelo">
+            <td>Jogos com troféus online que não peguei ainda, mas os servidores ainda tão ligados</td>
+        </tr>
+        <tr class="vermelho">
+            <td>Jogos com troféus online que não peguei ainda e que os servidores já foram desligados</td>
+        </tr>
+    
+    
+</table>
 <section>
   <span>Plataforma</span>
   <span id="filtro1"></span>
@@ -33,44 +51,46 @@
     <th>Genero</th>
     <th>Data de lançamento</th>
     <th>Já tenho</th>
-    <th>Tem troféus online</th>
-    <th>Servidores desligados</th>
     <th>Tem platina</th>
     <th>Tem DLC</th>
   </thead>
   <tbody>
     
-      <tr>
+      <tr
+        
+        >
         <td>Demon Gaze</td>
         <td>PS Vita</td>
         <td>Blobber</td>
         <td>22/04/2014</td>
         <td>1</td>
-        <td>0</td>
-        <td>0</td>
         <td>1</td>
         <td>0</td>
       </tr>
     
-      <tr>
+      <tr
+        
+        >
         <td>Fantasy Life i: The Girl Who Steals Time</td>
         <td>PS4</td>
         <td>RPG</td>
         <td>21/05/2025</td>
         <td>0</td>
-        <td>0</td>
-        <td>0</td>
         <td>1</td>
         <td>0</td>
       </tr>
     
-      <tr>
+      <tr
+        
+          
+            class = "amarelo"  
+          
+        
+        >
         <td>Rematch</td>
         <td>PC</td>
         <td>Esporte</td>
         <td>19/06/2025</td>
-        <td>0</td>
-        <td>1</td>
         <td>0</td>
         <td>0</td>
         <td>0</td>
@@ -121,6 +141,7 @@
       },
     });
   </script>
+
     </section>
   </body>
 </html>

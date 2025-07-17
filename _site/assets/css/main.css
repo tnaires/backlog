@@ -1,0 +1,25 @@
+.vermelho * {
+  background-color: rgb(255, 230, 230);
+}
+
+.verde * {
+  background-color: rgb(195, 255, 195);
+}
+
+.amarelo * {
+  background-color: rgb(255, 255, 200);
+}
+
+.roxo * {
+  background-color: rgb(225, 225, 245);
+}
+
+.rosa * {
+  background-color: rgb(245, 190, 240);
+}
+
+.verde-claro * {
+  background-color: rgb(145, 245, 225);
+}
+
+/*# sourceMappingURL=main.css.map */

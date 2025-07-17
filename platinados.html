@@ -3,6 +3,7 @@ layout: default
 ---
 {% include menu.html %}
 <h2>Platinados</h2>
+{% include legendas.html online = false completos = true %}
 {% include filtro.html %}
 <table id="backlog" class="display compact">
   <thead>
@@ -10,23 +11,29 @@ layout: default
     <th>Plataforma</th>
     <th>Genero</th>
     <th>Data zerado</th>
-    <th>Tem platina</th>
     <th>Data platina</th>
-    <th>Tem DLC</th>
-    <th>Já fiz 100%</th>
     <th>Data 100%</th>
   </thead>
   <tbody>
     {% for jogo in site.data.platinados %}
-      <tr>
+      <tr
+        {% if jogo.ja_fiz_cem_por_cento == 1 %}
+          {% if jogo.tem_dlc == 1 %}
+            class = "verde-claro"
+          {% elsif jogo.tem_trofeu_platina == 1 %}
+            class = "roxo"
+          {% else %}
+            class = "rosa"
+          {% endif %}
+        {% elsif jogo.ja_platinei == 1 %}
+          class = "roxo"
+        {% endif %}
+        >
         <td>{{ jogo.nome }}</td>
         <td>{{ jogo.plataforma }}</td>
         <td>{{ jogo.genero }}</td>
         <td>{{ jogo.data_zerado }}</td>
-        <td>{{ jogo.tem_trofeu_platina }}</td>
         <td>{{ jogo.data_platina }}</td>
-        <td>{{ jogo.tem_dlc }}</td>
-        <td>{{ jogo.ja_fiz_cem_por_cento }}</td>
         <td>{{ jogo.data_cem_por_cento }}</td>
       </tr>
     {% endfor %}

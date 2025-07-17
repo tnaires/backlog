@@ -2,6 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
+    <link href="/assets/css/main.css" rel="stylesheet">
     <link href="/assets/css/datatables.min.css" rel="stylesheet">
     <script src="/assets/js/jquery-3.7.1.min.js"></script>
     <script src="/assets/js/datatables.min.js"></script>
@@ -20,6 +21,33 @@
 </nav>
 
 <h2>Jogando</h2>
+<table>
+    <thead>
+        Legendas de cores
+    </thead>
+    
+        <tr class="verde">
+            <td>Jogos com troféus online que já peguei</td>
+        </tr>
+        <tr class="amarelo">
+            <td>Jogos com troféus online que não peguei ainda, mas os servidores ainda tão ligados</td>
+        </tr>
+        <tr class="vermelho">
+            <td>Jogos com troféus online que não peguei ainda e que os servidores já foram desligados</td>
+        </tr>
+    
+    
+    <tr class="rosa">
+        <td>Jogos que fiz 100% sem platina</td>
+    </tr>
+    <tr class="roxo">
+        <td>Jogos platinados</td>
+    </tr>
+    <tr class="verde-claro">
+        <td>Jogos platinados e com todos os troféus de DLC</td>
+    </tr>
+    
+</table>
 <section>
   <span>Plataforma</span>
   <span id="filtro1"></span>
@@ -31,79 +59,136 @@
     <th>Jogo</th>
     <th>Plataforma</th>
     <th>Genero</th>
-    <th>Tem troféus online</th>
-    <th>Servidores desligados</th>
     <th>Já zerei</th>
     <th>Data zerado</th>
-    <th>Já peguei os troféus online</th>
-    <th>Tem platina</th>
+    <th>Data platina</th>
     <th>Tem DLC</th>
+    <th>Data 100%</th>
   </thead>
   <tbody>
     
-      <tr>
+      <tr
+        
+          class = "roxo"
+        
+        >
         <td>Hot Wheels Unleashed 2</td>
         <td>PS4</td>
         <td>Corrida</td>
         <td>1</td>
-        <td>0</td>
-        <td>1</td>
+        <td>03/07/2025</td>
         <td>03/07/2025</td>
         <td>1</td>
-        <td>1</td>
-        <td>1</td>
+        <td></td>
       </tr>
     
-      <tr>
+      <tr
+        
+          class = "roxo"
+        
+        >
         <td>Street Fighter 6</td>
         <td>PS4</td>
         <td>Luta</td>
-        <td>1</td>
-        <td>0</td>
         <td>0</td>
         <td></td>
+        <td>14/12/2023</td>
         <td>1</td>
-        <td>1</td>
-        <td>1</td>
+        <td></td>
       </tr>
     
-      <tr>
+      <tr
+        
+        >
         <td>Ni No Kuni</td>
         <td>PS3</td>
         <td>RPG</td>
-        <td>0</td>
-        <td>0</td>
         <td>1</td>
         <td>27/04/2023</td>
+        <td></td>
         <td>0</td>
-        <td>1</td>
-        <td>0</td>
+        <td></td>
       </tr>
     
-      <tr>
+      <tr
+        
+        >
         <td>Diablo 3</td>
         <td>PS3</td>
         <td>RPG</td>
-        <td>0</td>
-        <td>0</td>
         <td>1</td>
         <td>14/03/2017</td>
+        <td></td>
         <td>0</td>
-        <td>1</td>
-        <td>0</td>
+        <td></td>
       </tr>
     
-      <tr>
+      <tr
+        
+          
+            class = "verde"
+          
+        
+        >
         <td>Soul Sacrifice Delta</td>
         <td>PS Vita</td>
         <td>RPG</td>
         <td>1</td>
-        <td>1</td>
-        <td>1</td>
         <td>02/02/2025</td>
-        <td>1</td>
-        <td>1</td>
+        <td></td>
         <td>0</td>
+        <td></td>
+      </tr>
+    
+      <tr
+        
+          
+            class = "amarelo"
+          
+        
+        >
+        <td>Mortal Kombat XL</td>
+        <td>PS4</td>
+        <td>Luta</td>
+        <td>0</td>
+        <td></td>
+        <td></td>
+        <td>0</td>
+        <td></td>
+      </tr>
+    
+      <tr
+        
+          
+            class = "vermelho"
+          
+        
+        >
+        <td>Little Big Planet</td>
+        <td>PS3</td>
+        <td>Plataforma</td>
+        <td>0</td>
+        <td></td>
+        <td></td>
+        <td>0</td>
+        <td></td>
+      </tr>
+    
+      <tr
+        
+          
+            class = "rosa"
+          
+        
+        >
+        <td>eFootball</td>
+        <td>PS4</td>
+        <td>Esporte</td>
+        <td>0</td>
+        <td></td>
+        <td></td>
+        <td>0</td>
+        <td>18/03/2023</td>
       </tr>
     
   </tbody>
