@@ -30,9 +30,9 @@ layout: default
         <td>{{ jogo.plataforma }}</td>
         <td>{{ jogo.genero }}</td>
         <td>{{ jogo.data_lancamento }}</td>
-        <td>{{ jogo.ja_tenho }}</td>
-        <td>{{ jogo.tem_trofeu_platina }}</td>
-        <td>{{ jogo.tem_dlc }}</td>
+        {% include sim_nao.html valor = jogo.ja_tenho %}
+        {% include sim_nao.html valor = jogo.tem_trofeu_platina %}
+        {% include sim_nao.html valor = jogo.tem_dlc %}
       </tr>
     {% endfor %}
   </tbody>

@@ -42,10 +42,10 @@ layout: default
         <td>{{ jogo.nome }}</td>
         <td>{{ jogo.plataforma }}</td>
         <td>{{ jogo.genero }}</td>
-        <td>{{ jogo.ja_zerei }}</td>
+        {% include sim_nao.html valor = jogo.ja_zerei %}
         <td>{{ jogo.data_zerado }}</td>
         <td>{{ jogo.data_platina }}</td>
-        <td>{{ jogo.tem_dlc }}</td>
+        {% include sim_nao.html valor = jogo.tem_dlc %}
         <td>{{ jogo.data_cem_por_cento }}</td>
       </tr>
     {% endfor %}
