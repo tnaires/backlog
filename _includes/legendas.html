@@ -1,7 +1,5 @@
 <table>
-    <thead>
-        Legendas de cores
-    </thead>
+    <thead>Legendas de cores</thead>
     {% if include.online_ja_peguei %}
         <tr class="verde">
             <td>Jogos com troféus online que já peguei</td>
@@ -9,10 +7,10 @@
     {% endif %}
     {% if include.online %}
         <tr class="amarelo">
-            <td>Jogos com troféus online que não peguei ainda, mas os servidores ainda tão ligados</td>
+            <td>Jogos com troféus online que ainda dá pra pegar`</td>
         </tr>
         <tr class="vermelho">
-            <td>Jogos com troféus online que não peguei ainda e que os servidores já foram desligados</td>
+            <td>Jogos com troféus online que não dá mais pra pegar</td>
         </tr>
     {% endif %}
     {% if include.completos %}
