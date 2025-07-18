@@ -21,22 +21,33 @@
 </nav>
 
 <h2>Platinados</h2>
-<table>
-    <thead>Legendas de cores</thead>
-    
-    
-    
-    <tr class="rosa">
-        <td>Jogos que fiz 100% sem platina</td>
-    </tr>
-    <tr class="roxo">
-        <td>Jogos platinados</td>
-    </tr>
-    <tr class="verde-claro">
-        <td>Jogos platinados e com todos os troféus de DLC</td>
-    </tr>
-    
+<table id="tabelaLegendas">
+    <thead>Legendas de cores <a id="toggle" href="#">Exibir</a></thead>
+    <tbody id="legendas" style="display: none;">
+        
+        
+        
+            <tr class="rosa">
+                <td>Jogos que fiz 100% sem platina</td>
+            </tr>
+            <tr class="roxo">
+                <td>Jogos platinados</td>
+            </tr>
+            <tr class="verde-claro">
+                <td>Jogos platinados e com todos os troféus de DLC</td>
+            </tr>
+        
+    </tbody>
 </table>
+<script>
+    $(document).ready(function() {
+        $("#toggle").click(function() {
+            $("#legendas").toggle();
+            const toggleText = ($("#legendas").is(":visible") ? "Ocultar" : "Exibir");
+            $("#toggle").text(toggleText);
+        });
+    });
+</script>
 <section>
   <span>Plataforma</span>
   <span id="filtro1"></span>

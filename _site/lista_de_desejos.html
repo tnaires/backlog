@@ -21,19 +21,30 @@
 </nav>
 
 <h2>Lista de desejos</h2>
-<table>
-    <thead>Legendas de cores</thead>
-    
-    
-        <tr class="amarelo">
-            <td>Jogos com troféus online que ainda dá pra pegar`</td>
-        </tr>
-        <tr class="vermelho">
-            <td>Jogos com troféus online que não dá mais pra pegar</td>
-        </tr>
-    
-    
+<table id="tabelaLegendas">
+    <thead>Legendas de cores <a id="toggle" href="#">Exibir</a></thead>
+    <tbody id="legendas" style="display: none;">
+        
+        
+            <tr class="amarelo">
+                <td>Jogos com troféus online que ainda dá pra pegar`</td>
+            </tr>
+            <tr class="vermelho">
+                <td>Jogos com troféus online que não dá mais pra pegar</td>
+            </tr>
+        
+        
+    </tbody>
 </table>
+<script>
+    $(document).ready(function() {
+        $("#toggle").click(function() {
+            $("#legendas").toggle();
+            const toggleText = ($("#legendas").is(":visible") ? "Ocultar" : "Exibir");
+            $("#toggle").text(toggleText);
+        });
+    });
+</script>
 <section>
   <span>Plataforma</span>
   <span id="filtro1"></span>
