@@ -31,7 +31,7 @@
         
         
             <tr class="amarelo">
-                <td>Jogos com troféus online que ainda dá pra pegar`</td>
+                <td>Jogos com troféus online que ainda dá pra pegar</td>
             </tr>
             <tr class="vermelho">
                 <td>Jogos com troféus online que não dá mais pra pegar</td>
@@ -270,45 +270,48 @@
 </table>
 <script>
     new DataTable('#backlog', {
-      paging: false,
-      layout: {
-          topStart: 'search',
-          topEnd: 'pageLength',
-          bottomStart: 'info',
-          bottomEnd: 'paging'
-      },
-      order: [[1, 'asc'], [0, 'asc']],
-      language: {
-        url: 'https://cdn.datatables.net/plug-ins/2.3.2/i18n/pt-BR.json',
-      },
-      initComplete: function () {
-          this.api()
-              .columns([1, 2])
-              .every(function () {
-                  let column = this;
-  
-                  // Create select element
-                  let select = document.createElement('select');
-                  select.add(new Option(''));
-                  $("#filtro" + column.index()).append(select);
-  
-                  // Apply listener for user change in value
-                  select.addEventListener('change', function () {
-                      column
-                          .search(select.value, {exact: true})
-                          .draw();
-                  });
-  
-                  // Add list of options
-                  column
-                      .data()
-                      .unique()
-                      .sort()
-                      .each(function (d, j) {
-                          select.add(new Option(d));
-                      });
-              });
-      },
+        paging: false,
+        layout: {
+            topStart: ['search', 'info'],
+            topEnd: null,
+            bottomStart: null,
+            bottomEnd: null
+        },
+        order: [[1, 'asc'], [0, 'asc']],
+        language: {
+            url: 'https://cdn.datatables.net/plug-ins/2.3.2/i18n/pt-BR.json',
+        },
+        infoCallback: function (settings, start, end, max, total, pre) {
+            return `Mostrando ${total == 0 ? 'nenhum' : total} jogo${total > 1 ? 's' : ''}`;
+        },
+        initComplete: function () {
+            this.api()
+                .columns([1, 2])
+                .every(function () {
+                    let column = this;
+                    
+                    // Create select element
+                    let select = document.createElement('select');
+                    select.add(new Option(''));
+                    $("#filtro" + column.index()).append(select);
+                    
+                    // Apply listener for user change in value
+                    select.addEventListener('change', function () {
+                        column
+                            .search(select.value, {exact: true})
+                            .draw();
+                    });
+                    
+                    // Add list of options
+                    column
+                        .data()
+                        .unique()
+                        .sort()
+                        .each(function (d, j) {
+                            select.add(new Option(d));
+                        });
+                });
+        },
     });
   </script>
     </section>

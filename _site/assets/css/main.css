@@ -23,7 +23,12 @@
 }
 
 #tabelaLegendas {
+  margin-top: 0.5em;
   margin-bottom: 1em;
+}
+
+body {
+  font-family: Verdana, Arial, sans-serif;
 }
 
 /*# sourceMappingURL=main.css.map */
