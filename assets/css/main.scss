@@ -1,6 +1,15 @@
 ---
 ---
 
+body {
+    font-family: Verdana, Arial, sans-serif;
+}
+
+#tabelaLegendas {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
 .vermelho * {
     background-color: rgb(255 230 230);
 }
@@ -23,13 +32,4 @@
 
 .verde-claro * {
     background-color: rgb(145, 245, 225);
-}
-
-#tabelaLegendas {
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-}
-
-body {
-    font-family: Verdana, Arial, sans-serif;
 }
