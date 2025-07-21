@@ -1,6 +1,16 @@
 body {
   font-family: Verdana, Arial, sans-serif;
 }
+@media (min-width: 1201px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1200px) {
+  body {
+    font-size: 20px;
+  }
+}
 
 #tabelaLegendas {
   margin-top: 0.5em;
