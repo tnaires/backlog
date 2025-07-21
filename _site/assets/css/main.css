@@ -16,6 +16,9 @@ body {
 body h1, body nav {
   text-align: center;
 }
+body td {
+  white-space: nowrap;
+}
 
 #tabelaLegendas {
   margin-top: 0.5em;

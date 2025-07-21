@@ -17,6 +17,10 @@ body {
     h1, nav {
         text-align: center;
     }
+
+    td {
+        white-space: nowrap;
+    }
 }
 
 #tabelaLegendas {
