@@ -1,0 +1,38 @@
+---
+layout: default
+---
+{% include menu.html %}
+<h2>Zerados</h2>
+{% include legendas.html online_ja_peguei = false online = false completos = true %}
+{% include filtro.html %}
+<table id="backlog" class="display compact">
+  <thead>
+    <th>Jogo</th>
+    <th>Plataforma</th>
+    <th>Genero</th>
+    <th>Data zerado</th>
+  </thead>
+  <tbody>
+    {% for jogo in site.data.zerados %}
+      <tr
+        {% if jogo.ja_fiz_cem_por_cento == 1 %}
+          {% if jogo.tem_dlc == 1 %}
+            class = "verde-claro"
+          {% elsif jogo.tem_trofeu_platina == 1 %}
+            class = "roxo"
+          {% else %}
+            class = "rosa"
+          {% endif %}
+        {% elsif jogo.ja_platinei == 1 %}
+          class = "roxo"
+        {% endif %}
+        >
+        <td>{{ jogo.nome }}</td>
+        <td>{{ jogo.plataforma }}</td>
+        <td>{{ jogo.genero }}</td>
+        <td>{{ jogo.data_zerado }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% include data_table.html %}

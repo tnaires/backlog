@@ -11,6 +11,9 @@ sqlite:
   - data: jogando
     file: _db/backlog.db
     query: select j.nome, p.plataforma, g.genero, j.tem_trofeus_online, j.servidores_desligados, j.ja_zerei, j.data_zerado, j.ja_peguei_trofeus_online, j.tem_trofeu_platina, j.ja_platinei, j.data_platina, j.tem_dlc, j.ja_fiz_cem_por_cento, j.data_cem_por_cento from jogo j inner join plataforma p on p.id = j.id_plataforma inner join genero g on g.id = j.id_genero where j.jogando = true
+  - data: zerados
+    file: _db/backlog.db
+    query: select j.nome, p.plataforma, g.genero, j.data_zerado, j.tem_trofeu_platina, j.ja_platinei, j.tem_dlc, j.ja_fiz_cem_por_cento from jogo j inner join plataforma p on p.id = j.id_plataforma inner join genero g on g.id = j.id_genero where j.jogando = false and j.ja_zerei = true
   - data: platinados
     file: _db/backlog.db
     query: select j.nome, p.plataforma, g.genero, j.data_zerado, j.tem_trofeu_platina, j.ja_platinei, j.data_platina, j.tem_dlc, j.ja_fiz_cem_por_cento, j.data_cem_por_cento from jogo j inner join plataforma p on p.id = j.id_plataforma inner join genero g on g.id = j.id_genero where j.jogando = false and (j.ja_platinei = true or j.ja_fiz_cem_por_cento = true)
