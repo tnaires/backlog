@@ -29,7 +29,7 @@ layout: default
         <td>{{ jogo.nome }}</td>
         <td>{{ jogo.plataforma }}</td>
         <td>{{ jogo.genero }}</td>
-        <td>{{ jogo.data_lancamento }}</td>
+        <td data-sort = "YYYYMMDD">{{ jogo.data_lancamento }}</td>
         {% include sim_nao.html valor = jogo.ja_tenho %}
         {% include sim_nao.html valor = jogo.tem_trofeu_platina %}
         {% include sim_nao.html valor = jogo.tem_dlc %}
